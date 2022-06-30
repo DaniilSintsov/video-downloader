@@ -1,11 +1,11 @@
-# video_downloader :clapper:
+# video downloader :clapper:
 
 ![puppeteer](https://img.shields.io/npm/v/puppeteer?color=green&label=puppeteer)
 
-**video_downloader** - nodejs script that downloads video from a link
+**video downloader** - nodejs script that downloads video from a link
 
-*video_downloader* uses the [request](https://www.npmjs.com/package/request) and [puppeteer](https://pptr.dev/) modules in its work.
-Using the module [puppeteer](https://pptr.dev/) *video_downloader* goes to the resource https://ru.fetchfile.net, inserts a link to the video in the input field, and gets a download link. Then using the [request](https://www.npmjs.com/package/request) module the video is downloaded using this link
+*video downloader* uses the [request](https://www.npmjs.com/package/request) and [puppeteer](https://pptr.dev/) modules in its work.
+Using the module [puppeteer](https://pptr.dev/) *video downloader* goes to the resource https://ru.fetchfile.net, inserts a link to the video in the input field, and gets a download link. Then using the [request](https://www.npmjs.com/package/request) module the video is downloaded using this link
 
 ## Usage
 
