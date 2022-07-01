@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer')
 const request = require('request')
+const readline = require('readline-sync')
 const fs = require('fs')
 
 function downloadFile(url, filename) {
@@ -24,7 +25,7 @@ function downloadFile(url, filename) {
     .pipe(fs.createWriteStream(`${filename}.mp4`))
 }
 
-async function start(downloadableVideoURL, filename) {
+async function getRealLink(downloadableVideoUrl) {
   const browser = await puppeteer.launch()
   const page = await browser.newPage()
   await page.goto('https://ru.fetchfile.net/')
@@ -32,26 +33,26 @@ async function start(downloadableVideoURL, filename) {
 
   const inputSelector = '#videoPath'
   const buttonSelector = '#home-submit'
-  const downloadLinkSelector =
-    '#table > tbody > tr > td:nth-child(3) > a.btn.btn-success.btn-xs.download-link'
+  const downloadLinkSelector = '#table > tbody > tr > td:nth-child(3) > a.btn.btn-success.btn-xs.download-link'
 
   await page.waitForSelector(inputSelector)
-  await page.$eval(
-    inputSelector,
-    (el, downloadableVideoURL) => (el.value = downloadableVideoURL),
-    downloadableVideoURL
-  )
+  await page.$eval(inputSelector, (el, downloadableVideoUrl) => (el.value = downloadableVideoUrl), downloadableVideoUrl)
 
   await page.waitForSelector(buttonSelector)
   await page.click(buttonSelector)
 
   await page.waitForSelector(downloadLinkSelector)
-  const realLink = await page.$eval(downloadLinkSelector, el =>
-    el.getAttribute('href')
-  )
+  const realLink = await page.$eval(downloadLinkSelector, el => el.getAttribute('href'))
   await browser.close()
 
-  downloadFile(realLink, filename)
+  return realLink
 }
 
-start('https://www.ntv.ru/peredacha/Pes/m85602/o636279/video/', 'Пес_5_9-серия')
+async function main() {
+  const downloadableVideoUrl = await readline.question('Link to the video page: ')
+  const filename = await readline.question('Filename: ')
+
+  downloadFile(await getRealLink(`${downloadableVideoUrl}`), `${filename}`)
+}
+
+main()
