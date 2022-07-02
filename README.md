@@ -36,7 +36,3 @@ Filename: my_video
 ## Contributing
 
 Bug reports and/or pull requests are welcome
-
-## License
-
-The script is avaliable as open source under the terms of the [Apache License, Version 2.0](https://opensource.org/licenses/Apache-2.0)
