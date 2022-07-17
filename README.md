@@ -7,6 +7,7 @@
 
 _video downloader_ uses the [readline-sync](https://www.npmjs.com/package/readline-sync), [puppeteer](https://pptr.dev/) and [request](https://www.npmjs.com/package/request) modules in its work.
 
+
 Using the [readline-sync](https://www.npmjs.com/package/readline-sync) module
 _video downloader_ receives a link to the page with the video, and the name of the file in which the downloaded video will be saved.
 With the help of the module [puppeteer](https://pptr.dev/) _video downloader_ goes to the resource https://ru.fetchfile.net,
@@ -39,4 +40,4 @@ Bug reports and/or pull requests are welcome
 
 ## License
 
-The script is avaliable as open source under the terms of the [Apache License, Version 2.0](https://opensource.org/licenses/Apache-2.0)
+The script is available as open source under the terms of the [Apache License, Version 2.0](https://opensource.org/licenses/Apache-2.0)
