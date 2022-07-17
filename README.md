@@ -5,13 +5,12 @@
 
 **video downloader** - nodejs script that downloads video from a link
 
-_video downloader_ uses the [readline-sync](https://www.npmjs.com/package/readline-sync), [puppeteer](https://pptr.dev/) and [request](https://www.npmjs.com/package/request) modules in its work.
+*video downloader* uses the [readline-sync](https://www.npmjs.com/package/readline-sync), [puppeteer](https://pptr.dev/) and [request](https://www.npmjs.com/package/request) modules in its work.
 
-
-Using the [readline-sync](https://www.npmjs.com/package/readline-sync) module
-_video downloader_ receives a link to the page with the video, and the name of the file in which the downloaded video will be saved.
-With the help of the module [puppeteer](https://pptr.dev/) _video downloader_ goes to the resource https://ru.fetchfile.net,
-inserts a link to the video in the input field and receives a download link. Then, using the [request](https://www.npmjs.com/package/request)
+Using the [readline-sync](https://www.npmjs.com/package/readline-sync) module 
+*video downloader* receives a link to the page with the video, and the name of the file in which the downloaded video will be saved. 
+With the help of the module [puppeteer](https://pptr.dev/) *video downloader* goes to the resource https://ru.fetchfile.net, 
+inserts a link to the video in the input field and receives a download link. Then, using the [request](https://www.npmjs.com/package/request) 
 module, the video is downloaded using this link
 
 ## Usage
@@ -24,9 +23,9 @@ Then run the script using the command in the terminal:
 
 `npm start`
 
-The program will ask you to enter a link to the page with the
-video, and the name of the file where the downloaded video will
-be saved (you do not need to enter the file format, the video
+The program will ask you to enter a link to the page with the 
+video, and the name of the file where the downloaded video will 
+be saved (you do not need to enter the file format, the video 
 will be automatically saved in mp4). For example:
 
 ```
@@ -40,4 +39,4 @@ Bug reports and/or pull requests are welcome
 
 ## License
 
-The script is available as open source under the terms of the [Apache License, Version 2.0](https://opensource.org/licenses/Apache-2.0)
+The script is avaliable as open source under the terms of the [Apache License, Version 2.0](https://opensource.org/licenses/Apache-2.0)
